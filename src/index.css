@@ -1,27 +1,29 @@
 @import '@fontsource-variable/geist';
+@import 'tailwindcss';
+
+@theme {
+  --color-page: #ffffff;
+  --color-ink: #171a34;
+  --color-ink-muted: #525772;
+  --color-ink-soft: #767d99;
+  --color-brand: #5856ea;
+  --color-brand-deep: #2c31c5;
+
+  --font-sans:
+    'Geist Variable', 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-display:
+    'Geist Variable', 'Avenir Next', 'Segoe UI', sans-serif;
+}
 
 :root {
-  --page: #ffffff;
-  --panel: rgba(255, 255, 255, 0.8);
-  --ink: #171a34;
-  --ink-muted: #525772;
-  --ink-soft: #767d99;
-  --brand: #5856ea;
-  --brand-deep: #2c31c5;
-  --font-body: 'Geist Variable', 'Avenir Next', 'Segoe UI', sans-serif;
-  --font-display: 'Geist Variable', 'Avenir Next', 'Segoe UI', sans-serif;
-  font-family: var(--font-body);
-  color: var(--ink);
+  font-family: var(--font-sans);
+  color: var(--color-ink);
   background: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 html {
@@ -32,28 +34,26 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: var(--page);
-  color: var(--ink);
+  background: var(--color-page);
+  color: var(--color-ink);
 }
 
-body::before {
-  content: none;
-}
+@layer base {
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
 
-button,
-a,
-input,
-textarea,
-select {
-  font: inherit;
-}
+  a {
+    color: inherit;
+  }
 
-a {
-  color: inherit;
-}
-
-img {
-  max-width: 100%;
+  img {
+    max-width: 100%;
+  }
 }
 
 #root {
